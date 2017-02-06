@@ -1,2 +1,2 @@
-add_lunch_combo lineage_ha3g-userdebug
-sh device/samsung/ha3g/patches/applypatch.sh
+add_lunch_combo lineage_k3gxx-userdebug
+sh device/samsung/k3gxx/patches/applypatch.sh

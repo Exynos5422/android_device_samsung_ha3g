@@ -40,8 +40,8 @@ service sensorhubservice /system/bin/sensorhubservice
 on boot
 
 # Permissions for gpio_keys
-    chown system system /sys/class/input/input13/enabled
-    chmod 0660 /sys/class/input/input13/enabled
+    chown radio system /sys/class/sec/sec_key/wakeup_keys
+    write /sys/class/sec/sec_key/wakeup_keys 116,172
 
 # Permissions for HeadSet
     chown system system /sys/class/input/input11/enabled
@@ -50,94 +50,10 @@ on boot
     chmod 0660 /sys/class/input/input12/enabled
 
 # Permissions for Touchkey
-    chown system system /sys/class/input/input14/enabled
-    chmod 0660 /sys/class/input/input14/enabled
-
-# Permissions for sensors
-    chown system system /sys/class/input/input2/enabled
-    chmod 0660 /sys/class/input/input2/enabled
-    chown system system /sys/class/input/input3/enabled
-    chmod 0660 /sys/class/input/input3/enabled
-    chown system system /sys/class/input/input4/enabled
-    chmod 0660 /sys/class/input/input4/enabled
-    chown system system /sys/class/input/input5/enabled
-    chmod 0660 /sys/class/input/input5/enabled
-    chown system system /sys/class/input/input6/enabled
-    chmod 0660 /sys/class/input/input6/enabled
-    chown system system /sys/class/input/input7/enabled
-    chmod 0660 /sys/class/input/input7/enabled
-    chown system system /sys/class/input/input8/enabled
-    chmod 0660 /sys/class/input/input8/enabled
-    chown system system /sys/class/input/input9/enabled
-    chmod 0660 /sys/class/input/input9/enabled
-    chown system system /sys/class/input/input10/enabled
-    chmod 0660 /sys/class/input/input10/enabled
-
-# Accelerometer_sensor
-    chown system radio /sys/class/sensors/accelerometer_sensor/selftest
-
-# Temphumidity_sensor
-    chown system radio /sys/class/sensors/temphumidity_sensor/mcu_batt_adc
-    chown system radio /sys/class/sensors/temphumidity_sensor/mcu_chg_adc
-    chown system radio /sys/class/sensors/temphumidity_sensor/batt_temperature
-    chown system radio /sys/class/sensors/temphumidity_sensor/chg_temperature
-
-# SHTC1 BULK
-    chmod 0600 /dev/shtc1_sensor
-    chown system system /dev/shtc1_sensor
-
-# SensorHub
-    chown system radio /sys/class/sensors/ssp_sensor/enable
-    chown system radio /sys/class/sensors/ssp_sensor/mcu_rev
-    chown system radio /sys/class/sensors/ssp_sensor/mcu_name
-    chown system radio /sys/class/sensors/ssp_sensor/mcu_test
-    chown system radio /sys/class/sensors/ssp_sensor/mcu_reset
-    chown system radio /sys/class/sensors/ssp_sensor/mcu_update
-    chown system radio /sys/class/sensors/ssp_sensor/mcu_sleep_test
-
-# Sensorhub IIO
-    chown system radio /sys/class/sensors/ssp_sensor/accel_poll_delay
-    chown system radio /sys/class/sensors/ssp_sensor/rot_poll_delay
-    chown system radio /sys/class/sensors/ssp_sensor/game_rot_poll_delay
-    chown system radio /sys/class/sensors/ssp_sensor/step_det_poll_delay
-    chown system radio /sys/class/sensors/ssp_sensor/gyro_poll_delay
-    chown system radio /sys/class/sensors/ssp_sensor/uncalib_gyro_poll_delay
-    chown system radio /sys/class/sensors/ssp_sensor/mag_poll_delay
-    chown system radio /sys/class/sensors/ssp_sensor/uncal_mag_poll_delay
-    chown system radio /sys/class/sensors/ssp_sensor/pressure_poll_delay
-    chown system radio /sys/class/sensors/ssp_sensor/ssp_flush
-    chmod 0600 /dev/batch_io
-    chown system system /dev/batch_io
-
-# Permissions for EPEN
-    chown system radio /sys/class/sec/sec_epen/epen_firm_update
-    chown system radio /sys/class/sec/sec_epen/epen_rotation
-    chown system radio /sys/class/sec/sec_epen/epen_hand
-    chown system radio /sys/class/sec/sec_epen/epen_reset
-    chown system radio /sys/class/sec/sec_epen/epen_reset_result
-    chown system radio /sys/class/sec/sec_epen/epen_checksum
-    chown system radio /sys/class/sec/sec_epen/epen_checksum_result
-    chown system radio /sys/class/sec/sec_epen/epen_saving_mode
-    chown system radio /sys/class/sec/sec_epen/boost_level
-    chown system system /sys/class/input/input14/enabled
-    chmod 0660 /sys/class/input/input14/enabled
-
-# Input Boosters
-    write /sys/module/synaptics_i2c_rmi/parameters/tsp_booster_enabled 0
-    write /sys/module/cypress_touchkey/parameters/touchkey_booster_enabled 0
-    write /sys/module/wacom_i2c_func/parameters/wacom_booster_enabled 0
-
-# Epen power saving mode
-    write /sys/devices/virtual/sec/sec_epen/epen_saving_mode 1
-
-on fs
-
-# Broadcom NFC
-    chmod 0600 /dev/bcm2079x
-    chown nfc nfc /dev/bcm2079x
-    mkdir /data/bcmnfc
-    mkdir /data/bcmnfc/param
-    chmod 0700 /data/bcmnfc
-    chmod 0700 /data/bcmnfc/param
-    chown nfc nfc /data/bcmnfc
-    chown nfc nfc /data/bcmnfc/param
+    chown system radio /sys/class/sec/sec_touchkey/brightness
+    chown system radio /sys/class/sec/sec_touchkey/touchkey_firm_update
+    chown system radio /sys/class/sec/sec_touchkey/touch_sensitivity
+    chown system radio /sys/class/sec/sec_touchkey/glove_mode
+    chown system radio /sys/class/sec/sec_touchkey/flip_mode
+    chown system radio /sys/class/sec/sec_touchkey/boost_level
+    chown system system /sys/class/sec/sec_touchkey/input/enabled
