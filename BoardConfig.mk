@@ -79,3 +79,5 @@ BOARD_USES_LEGACY_AUDIO_BLOB := true
 
 # Inherit from exynos5420-common
 include device/samsung/exynos5422-common/BoardConfigCommon.mk
+# inherit from the proprietary version
+-include vendor/samsung/k3gxx/BoardConfigVendor.mk

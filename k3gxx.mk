@@ -13,6 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+$(call inherit-product-if-exists, vendor/samsung/k3gxx/k3gxx-vendor.mk)
 
 LOCAL_PATH := device/samsung/k3gxx
 
@@ -121,3 +123,5 @@ $(call inherit-product-if-exists, vendor/samsung/k3gxx/k3gxx-vendor.mk)
 # Import the common tree changes
 include device/samsung/exynos5422-common/exynos5422.mk
 
+PRODUCT_NAME := full_k3gxx
+PRODUCT_DEVICE := k3gxx
