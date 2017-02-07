@@ -20,6 +20,8 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_PREF_CONFIG := xxhdpi
+PRODUCT_AAPT_PREBUILT_DPI := xhdpi hdpi mdpi
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -41,6 +43,10 @@ PRODUCT_PACKAGES += \
 # GPS
 PRODUCT_PACKAGES += \
     libdmitry
+
+# Shims
+PRODUCT_PACKAGES += \
+    libsamsung_symbols
 
 # GPS
 PRODUCT_COPY_FILES += \
@@ -99,8 +105,6 @@ PRODUCT_PACKAGES += \
     libril \
     librilutils \
     rild \
-    libxml2 \
-    libprotobuf-cpp-full \
     modemloader
 
 PRODUCT_PROPERTY_OVERRIDES += \
