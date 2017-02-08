@@ -100,13 +100,12 @@ PRODUCT_PACKAGES += \
     fstab.universal5422 \
     init.target.rc \
     init.baseband.rc \
-    ueventd.universal5422.rc
+    ueventd.universal5422.rc \
+	init.rc \
+	init.goldfish.sh
 
 # Radio
 PRODUCT_PACKAGES += \
-    libril \
-    librilutils \
-    rild \
     modemloader
 
 PRODUCT_PROPERTY_OVERRIDES += \

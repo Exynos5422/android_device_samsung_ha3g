@@ -146,7 +146,7 @@ public class SlteRIL extends RIL {
     }
 
     public void setDataAllowed(boolean allowed, Message result) {
-        Rlog.v(RILJ_LOG_TAG, "XMM7260RIL: setDataAllowed");
+        Rlog.v(RILJ_LOG_TAG, "XMM6360RIL: setDataAllowed");
 
         if (result != null) {
             AsyncResult.forMessage(result, 0, null);
@@ -393,7 +393,7 @@ public class SlteRIL extends RIL {
      */
     @Override
     public void sendSMSExpectMore(String smscPDU, String pdu, Message result) {
-        Rlog.v(RILJ_LOG_TAG, "XMX6360: sendSMSExpectMore");
+        Rlog.v(RILJ_LOG_TAG, "XMM6360: sendSMSExpectMore");
 
         RILRequest rr = RILRequest.obtain(RIL_REQUEST_SEND_SMS, result);
         constructGsmSendSmsRilRequest(rr, smscPDU, pdu);
@@ -423,7 +423,7 @@ public class SlteRIL extends RIL {
             String strState = strings[i+3].toLowerCase();
 
             Rlog.v(RILJ_LOG_TAG,
-                   "XMX6360: Add OperatorInfo: " + strOperatorLong +
+                   "XMM6360: Add OperatorInfo: " + strOperatorLong +
                    ", " + strOperatorLong +
                    ", " + strOperatorNumeric +
                    ", " + strState);
@@ -463,7 +463,7 @@ public class SlteRIL extends RIL {
             case RIL_UNSOL_DEVICE_READY_NOTI: /* Registrant notification */
             case RIL_UNSOL_SIM_PB_READY: /* Registrant notification */
                 Rlog.v(RILJ_LOG_TAG,
-                       "XMX6360: ignoring unsolicited response " +
+                       "XMM6360: ignoring unsolicited response " +
                        origResponse);
                 return;
         }
@@ -495,7 +495,7 @@ public class SlteRIL extends RIL {
             case RIL_UNSOL_AM:
                 String strAm = (String)ret;
                 // Add debug to check if this wants to execute any useful am command
-                Rlog.v(RILJ_LOG_TAG, "XMX6360: am=" + strAm);
+                Rlog.v(RILJ_LOG_TAG, "XMM6360: am=" + strAm);
                 break;
         }
     }
