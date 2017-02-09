@@ -449,8 +449,9 @@ struct audio_stream_in {
      *
      * The status returned is 0 on success, -ENOSYS if the device is not
      * ready/available, or -EINVAL if the arguments are null or otherwise invalid.
+     */
     int (*get_capture_position)(const struct audio_stream_in *stream,
-                                int64_t *frames, int64_t *time);*/
+                                int64_t *frames, int64_t *time);
 };
 typedef struct audio_stream_in audio_stream_in_t;
 
