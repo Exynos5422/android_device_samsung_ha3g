@@ -1,2 +1,1 @@
-add_lunch_combo cm_k3gxx-userdebug
-#sh device/samsung/k3gxx/patches/applypatch.sh
+add_lunch_combo aosp_k3gxx-userdebug

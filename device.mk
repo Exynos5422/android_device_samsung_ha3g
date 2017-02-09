@@ -121,6 +121,3 @@ $(call inherit-product-if-exists, vendor/samsung/k3gxx/k3gxx-vendor.mk)
 
 # Import the common tree changes
 include device/samsung/exynos5422-common/exynos5422.mk
-
-PRODUCT_NAME := full_k3gxx
-PRODUCT_DEVICE := k3gxx
