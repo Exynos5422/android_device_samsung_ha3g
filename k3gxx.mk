@@ -95,19 +95,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
 
-# Ramdisk
-PRODUCT_PACKAGES += \
-    fstab.universal5422 \
-    init.target.rc \
-    init.baseband.rc \
-    ueventd.universal5422.rc \
-	init.rc \
-	init.goldfish.sh
-
-# Radio
-PRODUCT_PACKAGES += \
-    modemloader
-
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.carrier=unknown
 
