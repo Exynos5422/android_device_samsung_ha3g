@@ -33,8 +33,7 @@ BOARD_RIL_CLASS := ../../../device/samsung/k3gxx/ril
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 
 # Bootloader
-TARGET_OTA_ASSERT_DEVICE := k3gxx, k3g
-
+TARGET_OTA_ASSERT_DEVICE := k3g,k3gxx
 # Kernel
 TARGET_KERNEL_CONFIG := aosp_k3gxx_defconfig
 
