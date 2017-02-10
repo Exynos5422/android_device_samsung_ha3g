@@ -200,12 +200,12 @@ public class SlteRIL extends RIL {
 
         send(rr);
     }
-	@Override
-    protected void switchToRadioState(RadioState newState) {
-        super.switchToRadioState(newState);
+
+    private void switchToRadioState(RadioState newState) {
+        setRadioState(newState);
 
         if (newState == RadioState.RADIO_ON && mPendingGetSimStatus != null) {
-            super.getIccCardStatus(mPendingGetSimStatus);
+            getIccCardStatus(mPendingGetSimStatus);
             mPendingGetSimStatus = null;
         }
     }
@@ -518,3 +518,4 @@ public class SlteRIL extends RIL {
         return ret;
     }
 }
+
